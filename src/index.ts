@@ -4,12 +4,12 @@ import { OpenAI } from "langchain";
 dotenv.config();
 
 const model = new OpenAI({
-  modelName: "gpt-3.5-turbo",
+  temperature: 0.9,
   openAIApiKey: process.env.OPENAI_API_KEY,
 });
 
 const res = await model.call(
-  "What's a good idea for an application to build with GPT-3?"
+  "What would be a good company name a company that makes colorful socks?"
 );
 
 console.log(res);
